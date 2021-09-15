@@ -17,7 +17,7 @@
                 <td> {{ $post->title }} </td>
                 <td>
                     <a href=" {{ route('admin.posts.show', $post->slug) }} " class="btn btn-primary">Show</a>
-                    <a href="" class="btn btn-warning">Edit</a>
+                    <a href=" {{ route('admin.posts.edit') }} " class="btn btn-warning">Edit</a>
                     <form action="" method="post" class="d-inline-block">
                         @csrf
                         @method('DELETE')
