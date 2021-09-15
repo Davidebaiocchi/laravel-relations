@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Post;
 use Illuminate\Support\Str;
-use Faker\Provider\Lorem;
+use App\Post;
 
 class PostsTableSeeder extends Seeder
 {
@@ -14,16 +13,16 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < 10; $i++) { 
-            // creare istanza
+        for($i = 0; $i < 10; $i++){
+            //creare l'istanza
             $newPost = new Post();
 
-            // generare dati
-            $newPost->title = 'Post Numero ' . ($i + 1);
+            //generare i dati
+            $newPost->title = 'Post numero ' . ($i + 1);
             $newPost->slug = Str::slug($newPost->title, '-');
-            $newPost->content = "PS C:\mamp_publici_sercizi laravel\laravel-boolpress\project>";
-            
-            // salvare
+            $newPost->content = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda eum blanditiis dolorem consectetur culpa incidunt quibusdam quo. Eveniet non laboriosam a dolore, quo iure alias architecto, repudiandae odio reiciendis quibusdam!';
+
+            //salvare i dati
             $newPost->save();
         }
     }

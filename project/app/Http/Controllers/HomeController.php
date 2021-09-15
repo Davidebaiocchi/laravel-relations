@@ -1,5 +1,5 @@
 <?php
-// guest
+//Controller per la parte guest
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
