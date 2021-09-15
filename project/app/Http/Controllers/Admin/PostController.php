@@ -90,8 +90,10 @@ class PostController extends Controller
      //collegamento con lo slug (utilizzato nel front-office)
      public function show($slug)
     {
+        var_dump($slug);
         $post = Post::where('slug',$slug)->first();
         return view('admin.posts.show', compact('post'));
+        
     }
     //collegamento con id
     // public function show(Post $post)
