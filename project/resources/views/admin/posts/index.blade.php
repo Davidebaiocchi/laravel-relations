@@ -17,11 +17,12 @@
                 <td> {{ $post->title }} </td>
                 <td>
                     <a href=" {{ route('admin.posts.show', $post->slug) }} " class="btn btn-primary">Show</a>
-                    <a href=" {{ route('admin.posts.edit') }} " class="btn btn-warning">Edit</a>
-                    <form action="" method="post" class="d-inline-block">
+                    <a href=" {{ route('admin.posts.edit', $post->id) }} " class="btn btn-warning">Edit</a>
+                    
+                    <form action="{{route('admin.posts.destroy', $post->id)}}" method="POST" class="d-inline-block">
                         @csrf
                         @method('DELETE')
-                        <input type="submit" value="delete" class="btn btn-danger">
+                        <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Sei sicuro di voler cancellare l\'elemento?')">
                     </form>
                 </td>
               </tr>
