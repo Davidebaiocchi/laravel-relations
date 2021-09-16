@@ -25,6 +25,21 @@
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
+
+        <div class="mb-3">
+            <label for="category" class="form-label">Categoria</label>
+            <select name="category_id" id="category" class="form-control">
+              <option value="">-- Seleziona una categoria --</option>
+              @foreach ($categories as $category)
+                  <option value="{{$category->id}}"
+                  @if (old('category_id') == $category->id)
+                    selected
+                  @endif  
+                  >{{$category->name}}</option>
+              @endforeach
+            </select>
+          </div>
+
         <div class="mb-3">
             <label for="desc" class="form-label">Descrizione</label>
             <textarea class="form-control 

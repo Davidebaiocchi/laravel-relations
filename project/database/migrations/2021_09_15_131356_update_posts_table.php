@@ -19,7 +19,7 @@ class UpdatePostsTable extends Migration
             $table->foreign('category_id')
                   ->references('id')
                   ->on('categories')
-                  ->onDelete('set Null');
+                  ->onDelete('set null');
         });
     }
 
